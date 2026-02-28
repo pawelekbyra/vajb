@@ -12,6 +12,13 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config) => {
+    config.ignoreWarnings = [
+      { module: /node_modules\/keyv\/src\/index\.js/ },
+      { module: /node_modules\/cacheable-request\/src\/index\.js/ },
+    ];
+    return config;
+  },
 };
 
 export default nextConfig;

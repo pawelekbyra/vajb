@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { Scale, Search, ShieldCheck, Globe, Calendar, History, ExternalLink } from 'lucide-react';
+import { Scale, Search, ShieldCheck, Globe, Calendar, History, ExternalLink, FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import {
   CaseFile, PullQuote, LocationStampUI, TransactionStampUI
@@ -653,7 +653,7 @@ export default function ShamanContent() {
                         rel="noopener noreferrer"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">
@@ -681,7 +681,7 @@ export default function ShamanContent() {
                         rel="noopener noreferrer"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">
@@ -709,7 +709,7 @@ export default function ShamanContent() {
                         href="#"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">
@@ -737,7 +737,7 @@ export default function ShamanContent() {
                         href="#"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">
@@ -765,7 +765,7 @@ export default function ShamanContent() {
                         href="#"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">
@@ -793,7 +793,7 @@ export default function ShamanContent() {
                         href="#"
                         className="shrink-0 w-40 justify-center bg-[#f8f1e6] text-[#722f37] px-3 py-1 text-xs font-bold rounded border border-[#e8e0cc] hover:bg-[#e8e0cc] transition-colors flex items-center gap-2 underline decoration-double decoration-[#b8a880]"
                       >
-                        <Search className="w-3 h-3" /> Pobierz PDF
+                        <FileText className="w-3 h-3" /> Pobierz PDF
                       </a>
                     </div>
                     <div className="border-t border-[#f4ecd8] pt-2">

@@ -3,6 +3,11 @@ import type { Metadata } from 'next';
 import { ShieldCheck, Lock, ArrowRight } from 'lucide-react';
 import { ElixirModalsProvider } from '@/app/eliksir/ElixirClientComponents';
 import ElixirLogin from '@/app/components/ElixirLogin';
+import {
+  VIDEO_ARREST_METADATA,
+  VIDEO_STEFANEK_METADATA,
+  KORDYS_IMAGES_URL
+} from '@/lib/eliksir-data';
 
 export const metadata: Metadata = {
   title: "Eliksir Wiedźmina – Archiwum Śledcze",
@@ -35,12 +40,67 @@ const BrandHeader = () => {
 };
 
 export default function Page() {
+  const newsArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Eliksir Wiedźmina – Śledztwo: Michał Kiciński i tajemnica Janova",
+    "description": "Pełna dokumentacja śledztwa: Michał Kiciński, Jarosław Kordys i prokurator Jolanta Świdnicka. Ayahuasca, Janov i tragiczna śmierć uczestniczki.",
+    "image": [
+      `${KORDYS_IMAGES_URL}/wezwanie/wezwanie_kicinski.png`
+    ],
+    "datePublished": "2024-03-03",
+    "author": [{
+      "@type": "Person",
+      "name": "Detektyw Polutek",
+      "url": "mailto:detektyw.polutek@protonmail.com"
+    }]
+  };
+
+  const videoArrestSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": VIDEO_ARREST_METADATA.name,
+    "description": VIDEO_ARREST_METADATA.description,
+    "thumbnailUrl": VIDEO_ARREST_METADATA.thumbnailUrl,
+    "uploadDate": VIDEO_ARREST_METADATA.uploadDate,
+    "contentUrl": VIDEO_ARREST_METADATA.contentUrl,
+  };
+
+  const videoStefanekSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": VIDEO_STEFANEK_METADATA.name,
+    "description": VIDEO_STEFANEK_METADATA.description,
+    "thumbnailUrl": VIDEO_STEFANEK_METADATA.thumbnailUrl,
+    "uploadDate": VIDEO_STEFANEK_METADATA.uploadDate,
+    "contentUrl": VIDEO_STEFANEK_METADATA.contentUrl,
+  };
+
   return (
     <ElixirModalsProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsArticleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoArrestSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStefanekSchema) }}
+      />
+
       <main className="min-h-screen bg-[#fcfbf9] text-[#3d2b1f] selection:bg-[#d4c4a8]/50 font-serif flex flex-col items-center">
         <div className="w-full max-w-5xl border-x-2 border-black bg-[#fcfbf9] min-h-screen flex flex-col shadow-[0_0_50px_rgba(0,0,0,0.02)]">
 
           <BrandHeader />
+
+          <div className="w-full bg-[#faf6ec] border-b border-[#d4c4a8] py-6 px-4">
+             <div className="max-w-md mx-auto">
+                <ElixirLogin />
+             </div>
+          </div>
 
           <header className="pt-8 pb-12 px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -72,18 +132,14 @@ export default function Page() {
             <div className="bg-[#faf6ec] border border-[#d4c4a8] p-8 md:p-12 shadow-sm rounded-sm relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-[#3d2b1f]"></div>
 
-                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#3d2b1f]">
                     <Lock className="w-6 h-6 text-[#722f37]" />
-                    Dostęp do Archiwum
+                    Status Archiwum
                 </h2>
 
-                <p className="text-[#5a4a3a] leading-relaxed mb-8 font-sans">
-                    Pełna dokumentacja śledztwa dziennikarskiego, zawierająca skany wyroków, zeznania świadków oraz materiały wideo z operacji policyjnych, jest dostępna wyłącznie dla osób posiadających klucz autoryzacyjny.
+                <p className="text-[#5a4a3a] leading-relaxed mb-4 font-sans">
+                    Pełna dokumentacja śledztwa dziennikarskiego jest obecnie zabezpieczona. Aby uzyskać dostęp do skanów wyroków, zeznań świadków oraz materiałów wideo, należy skorzystać z panelu autoryzacji powyżej.
                 </p>
-
-                <div className="bg-white/50 p-6 rounded border border-[#e8e0cc]">
-                    <ElixirLogin />
-                </div>
 
                 <div className="mt-8 pt-8 border-t border-[#d4c4a8] text-[11px] text-[#8a7a62] font-sans uppercase tracking-widest leading-loose">
                     <p>BIURO ANALIZ I DOKUMENTACJI • MATERIAŁY POUFNE • © 2026</p>

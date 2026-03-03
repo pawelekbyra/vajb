@@ -219,7 +219,19 @@ export default function VibeHome() {
       </section>
 
       {/* Semantic Topic Map */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white relative">
+        {/* Hidden Entry Point to Secret Archive */}
+        <div className="absolute bottom-4 right-4 opacity-10 hover:opacity-100 transition-opacity">
+          <Link
+            href="https://www.eliksir-wiedzmina.pl"
+            className="flex items-center gap-2 text-[10px] font-serif text-[#3d2b1f] uppercase tracking-tighter"
+            title="Archiwum X"
+          >
+            <ShieldCheck className="w-3 h-3" />
+            <span>Archive Access</span>
+          </Link>
+        </div>
+
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
             <div className="max-w-xl">

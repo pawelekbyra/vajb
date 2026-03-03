@@ -10,16 +10,16 @@ export default auth((req) => {
   const { nextUrl } = req;
   const hostname = req.headers.get("host");
 
-  const isEliksirDomain = hostname === "eliksir-wiedzmina.pl" || hostname === "www.eliksir-wiedzmina.pl" || hostname?.includes("localhost");
-  const isAiDomain = hostname === "polutek.pl" || hostname === "www.polutek.pl" || hostname === "vibecoding.polutek.pl" || hostname === "www.vibecoding.polutek.pl" || hostname === "127.0.0.1";
+  const isEliksirDomain = hostname === "eliksir-wiedzmina.pl" || hostname === "www.eliksir-wiedzmina.pl";
+  const isAiDomain = hostname === "polutek.pl" || hostname === "www.polutek.pl" || hostname === "vibecoding.polutek.pl" || hostname === "www.vibecoding.polutek.pl";
 
   if (isEliksirDomain) {
     // serves the root page from app/(eliksir)/page.tsx
     return NextResponse.next();
   }
 
-  // AI/Coding domain or default (localhost)
-  if (isAiDomain || (!isEliksirDomain && hostname)) {
+  // AI/Coding domain or default (localhost / 127.0.0.1)
+  if (isAiDomain || hostname?.includes("localhost") || hostname === "127.0.0.1" || !hostname) {
     const isSeoFile = nextUrl.pathname === "/robots.txt" || nextUrl.pathname === "/sitemap.xml";
     // Exclude system paths and already rewritten paths
     if (!nextUrl.pathname.startsWith("/vibe-public") && !isSeoFile && !nextUrl.pathname.startsWith("/tingtong")) {

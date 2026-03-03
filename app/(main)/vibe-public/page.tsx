@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowRight, Rocket, MessageSquare, ShieldCheck, Wand2, Calculator, Map, Sparkles } from 'lucide-react';
+import { ArrowRight, Rocket, MessageSquare, ShieldCheck, Wand2, Calculator, Map, Sparkles, Lock } from 'lucide-react';
 import Link from 'next/link';
 import VibeCalculator from '@/app/components/VibeCalculator';
 import VibeHero from '@/app/components/VibeHero';
@@ -9,6 +9,7 @@ import SystemPromptGenerator from '@/app/components/SystemPromptGenerator';
 import VibeNewsroom from '@/app/components/VibeNewsroom';
 import LolekCommentary from '@/app/components/LolekCommentary';
 import SchemaMarkup from '@/app/components/SchemaMarkup';
+import ElixirLogin from '@/app/components/ElixirLogin';
 
 export default function VibeHome() {
   return (
@@ -21,6 +22,45 @@ export default function VibeHome() {
         datePublished="2025-03-04"
       />
       <VibeHero />
+
+      {/* Special Investigation Section */}
+      <section className="bg-[#FAF6EC] border-y border-[#C4B99A] py-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-8 opacity-5">
+           <ShieldCheck className="w-64 h-64 text-[#3D2B1F]" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 bg-[#722F37] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest">
+              <Sparkles className="w-3 h-3" /> Raport Specjalny
+            </div>
+            <h2 className="text-4xl font-serif font-black text-[#3D2B1F] leading-tight">
+              Eliksir Wiedźmina: <br/>
+              Mroczna Tajemnica Janova
+            </h2>
+            <p className="text-[#5A4A3A] text-lg leading-relaxed font-serif italic">
+              &quot;Ayahuasca, policyjne naloty i tragedia, o której nie miał się nikt dowiedzieć. Ujawniamy, jak twórcy gry Wiedźmin finansowali szamańskie podziemie.&quot;
+            </p>
+            <div className="flex items-center gap-4 text-xs font-sans font-bold uppercase tracking-widest text-[#8A7A62]">
+                <span className="flex items-center gap-1"><ShieldCheck className="w-4 h-4" /> Dowody</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4C4A8]"></span>
+                <span className="flex items-center gap-1"><Lock className="w-4 h-4" /> Akta</span>
+            </div>
+          </div>
+
+          <div className="bg-white p-2 shadow-xl border border-[#C4B99A]">
+             <div className="border border-[#C4B99A] p-6 bg-[#FAF6EC]/50">
+                <h3 className="text-center font-serif font-bold text-[#3D2B1F] uppercase tracking-tighter mb-4 text-xl">
+                  Panel Autoryzacji Archiwum
+                </h3>
+                <ElixirLogin />
+                <p className="text-center text-[10px] text-[#8A7A62] mt-4 uppercase tracking-widest font-sans">
+                  Tylko dla personelu uprawnionego
+                </p>
+             </div>
+          </div>
+        </div>
+      </section>
+
       <VibeComparisonToggle />
 
       {/* Quick Stats/Features */}

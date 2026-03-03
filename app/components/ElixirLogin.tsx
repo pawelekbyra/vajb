@@ -13,7 +13,16 @@ export default function ElixirLogin() {
     e.preventDefault();
     if (password.toLowerCase() === 'szaman') {
       localStorage.setItem('elixir_secret_access', 'szaman');
-      router.push('/szaman');
+
+      // If we are on polutek.pl (main site), redirect to the investigation domain
+      const isMainDomain = window.location.hostname.includes('polutek.pl') ||
+                          (window.location.hostname === 'localhost' && window.location.port === '3000');
+
+      if (isMainDomain) {
+        window.location.href = 'https://www.eliksir-wiedzmina.pl/szaman';
+      } else {
+        router.push('/szaman');
+      }
     } else {
       setError(true);
       setTimeout(() => setError(false), 2000);

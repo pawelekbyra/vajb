@@ -13,7 +13,7 @@ export default function ElixirLogin() {
     e.preventDefault();
     if (password.toLowerCase() === 'szaman') {
       localStorage.setItem('elixir_secret_access', 'szaman');
-      router.push('/szaman');
+      router.push('/artykul');
     } else {
       setError(true);
       setTimeout(() => setError(false), 2000);
